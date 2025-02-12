@@ -16,6 +16,10 @@ export function useTransactionsByEmployee(): TransactionsByEmployeeResult {
         }
       )
 
+      if (transactionsByEmployee !== null && data !== null) {
+        setTransactionsByEmployee([...transactionsByEmployee, ...data])
+      }
+
       setTransactionsByEmployee(data)
     },
     [fetchWithCache]
